@@ -50,6 +50,13 @@
             <version>1.4.9</version>
         </dependency>
 
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber6-adapter</artifactId>
+            <version>2.13.0</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 

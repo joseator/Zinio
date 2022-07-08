@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- report theme -->
+
+        <!-- standard, dark -->
+
+        <theme>standard</theme>
+        <!-- document encoding -->
+
+        <!-- defaults to UTF-8 -->
+
+        <encoding>UTF-8</encoding>
+        <!-- protocol for script and stylesheets -->
+
+        <!-- defaults to https -->
+
+        <protocol>http</protocol>
+        <!-- title of the document -->
+        <documentTitle>Zinio API Report Example</documentTitle>
+        <!-- report name - displayed at top-nav -->
+
+        <!--        Para visualizar el logo colocarlo en la ruta test-output/Report/logo-->
+        <reportName>
+            Zinio Report Example
+        </reportName>
+        <!-- location of charts in the test view -->
+
+        <!-- top, bottom -->
+
+        <testViewChartLocation>bottom</testViewChartLocation>
+        <!-- custom javascript -->
+
+        <offlineMode>false</offlineMode>
+
+        <scripts>
+
+            <![CDATA[
+$(document).ready(function() {
+});
+]]>
+        </scripts>
+        <!-- custom styles -->
+        <styles>
+            <![CDATA[
+]]>
+        </styles>
+    </configuration>
+</extentreports>

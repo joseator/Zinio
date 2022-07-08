@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         monochrome = true,
-        tags = "@Test",
+        tags = "@All",
         features = "src/test/resources/features/",
         glue = {"testzinio/stepDefinition"},
-        plugin = {"pretty"}
+        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class TestRunner {
 
