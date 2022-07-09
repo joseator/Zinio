@@ -1,3 +1,12 @@
+/**
+ * StepDefinitions.java.
+ *
+ * StepDefinitions Class map the features with the different java functions.
+ *
+ * @author Jose Antonio Torre
+ * @version 1.0
+ */
+
 package testzinio.stepDefinition;
 
 import com.mashape.unirest.http.HttpResponse;
@@ -16,12 +25,30 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-
+/**
+ * Class StepDefinitions map the different features with java functions
+ *
+ * Parameters:
+ *  - properties: Properties Object where stored the project.properties variables.
+ *  - secureEncrypt: SecureEncrypt Object with utils funcitons to encrypt and decrypt password.
+ *  - catalogInfo: JSONObjet where stored the catalog returned by the API in json format.
+ *  - catalogResponse: HttpResponse where stored the API response.
+ */
 public class StepDefinitions {
     private Properties properties = new Properties();
     private SecureEncrypt secureEncrypt= new SecureEncrypt();
     private JSONObject catalogInfo;
     private HttpResponse<JsonNode> catalogResponse;
+
+    /**
+     * Function: takeAuthToken
+     * Description: This function send a POST request to the API Token endpoint with the client_id stored in
+     * project.properties. If the response is a 200 OK, store the access token send in the properties to the following
+     * requests.
+     *
+     * @throws UnirestException
+     * @throws IOException
+     */
     @Given("send a POST request to take the authentication token")
     public void takeAuthToken() throws UnirestException, IOException {
         properties.load(new FileReader("src/test/resources/project.properties"));
@@ -41,19 +68,38 @@ public class StepDefinitions {
 
     }
 
+    /**
+     * Function: setInvalidToken
+     * Description: Store an invalid access token in the project properties.
+     *
+     * @throws IOException
+     */
     @Given("an invalid token")
-    public void setInvalidToken() throws UnirestException, IOException {
+    public void setInvalidToken() throws IOException {
         properties.load(new FileReader("src/test/resources/project.properties"));
         String accessToken = "1234567890";
         properties.setProperty("access_token", secureEncrypt.encrypt(accessToken, properties.getProperty("key")));
     }
 
+    /**
+     * Function: setEmptyToken
+     * Description: Store an empty access token in the project properties.
+     *
+     * @throws IOException
+     */
     @Given("an empty token")
-    public void setEmptyToken() throws UnirestException, IOException {
+    public void setEmptyToken() throws IOException {
         properties.load(new FileReader("src/test/resources/project.properties"));
         properties.setProperty("access_token", "");
     }
 
+    /**
+     * Function: getCatalog
+     * Description: Send a GET request to the Zinio API Catalog Endpoint to get all the elements available with
+     * its information. Then store the response in catalogResponse global variable.
+     *
+     * @throws UnirestException
+     */
     @When("send a GET request to get the Zinio Catalog")
     public void getCatalog() throws UnirestException {
         String token;
@@ -68,6 +114,13 @@ public class StepDefinitions {
                 .asJson();
     }
 
+    /**
+     * Function: checkCatalogRequest
+     * Description: Check if the response return by API Catalog endpoint is a 200 OK, and all the data in the
+     * json object have the right format.
+     *
+     * Note: Also check the first element in the response, but I comment that because these objects are changing all days.
+     */
     @Then("check the catalog request is correct")
     public void checkCatalogRequest() {
 
@@ -106,6 +159,10 @@ public class StepDefinitions {
 //        Assert.assertEquals("Catalog first element has the modified_at: 2022-07-08T11:43:45+0000", "2022-07-08T11:43:45+0000", element.get("modified_at"));
     }
 
+    /**
+     * Function: checkInvalidToken
+     * Description: Check if the response is a 401 Unauthorized by invalid token or expired.
+     */
     @Then("check the catalog request return a 401 Unauthorized: The access token is invalid or has expired")
     public void checkInvalidToken() {
         Assert.assertEquals("The response is a 401 Unauthorized", 401, catalogResponse.getStatus());
@@ -113,6 +170,10 @@ public class StepDefinitions {
         Assert.assertEquals("The error is: The access token is invalid or has expired", "The access token is invalid or has expired",  catalogResponse.getBody().getObject().get("error_description"));
     }
 
+    /**
+     * Function: checkMissingToken
+     * Description: Check if the response is a 401 Unauthorized by missed token.
+     */
     @Then("check the catalog request return a 401 Unauthorized: The access token is missing")
     public void checkMissingToken() {
         Assert.assertEquals("The response is a 401 Unauthorized", 401, catalogResponse.getStatus());

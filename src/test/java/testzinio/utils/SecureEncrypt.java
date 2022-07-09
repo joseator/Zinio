@@ -1,3 +1,12 @@
+/**
+ * SecureEncrypt.java.
+ *
+ * SecureEncrypt Class provide different utils function to encrypt and decrypt data.
+ *
+ * @author Jose Antonio Torre
+ * @version 1.0
+ */
+
 package testzinio.utils;
 
 import javax.crypto.Cipher;
@@ -10,10 +19,18 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.Properties;
 
+/**
+ * Class SecureEncrypt
+ */
 public class SecureEncrypt {
     private static SecretKeySpec secretKey;
     private static byte[] key;
 
+    /**
+     * Function: setKey
+     * Description: Store the key passed as parameter in the secretKey variable.
+     * @param myKey key used to encrypt or decrypt data.
+     */
     public static void setKey(String myKey)
     {
         MessageDigest sha = null;
@@ -29,6 +46,13 @@ public class SecureEncrypt {
         }
     }
 
+    /**
+     * Function: encrypt
+     * Description: Encrypt a string using a secret key.
+     * @param strToEncrypt String to encrypt.
+     * @param secret Key used to encrypt the string
+     * @return The string encrypted
+     */
     public static String encrypt(String strToEncrypt, String secret)
     {
         try
@@ -45,6 +69,13 @@ public class SecureEncrypt {
         return null;
     }
 
+    /**
+     * Function: decrypt
+     * Description: Decrypt a string using a secret key.
+     * @param strToDecrypt String to decrypt
+     * @param secret Key used to decrypt the string
+     * @return the string decrypted.
+     */
     public static String decrypt(String strToDecrypt, String secret)
     {
         try
@@ -60,8 +91,5 @@ public class SecureEncrypt {
         }
         return null;
     }
-
-
-
 }
 
