@@ -37,7 +37,7 @@ Zinio Report Example
 </span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">jul. 10, 2022 06:53:14 p. m.</span></a>
+<a href="#"><span class="badge badge-primary">jul. 10, 2022 09:44:12 p. m.</span></a>
 </li>
 </ul>
 </div>
@@ -68,13 +68,13 @@ Zinio Report Example
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>jul. 10, 2022 06:53:14 p. m.</h3>
+<h3>jul. 10, 2022 09:44:12 p. m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>jul. 10, 2022 06:53:18 p. m.</h3>
+<h3>jul. 10, 2022 09:44:15 p. m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -164,7 +164,7 @@ Zinio Report Example
 </div></div>
 <script>
 var timeline = {
-"Test API Zinio":3.222
+"Test API Zinio":2.518
 };
 </script>
 <div class="row">
@@ -174,8 +174,8 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@Test_Without_Token</td>
-<td>1</td>
+<td>@All</td>
+<td>3</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -198,8 +198,8 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
-<td>@All</td>
-<td>3</td>
+<td>@Test_Without_Token</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -250,7 +250,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@Test_Without_Token</a><a class="dropdown-item" href="#">@Test_Invalid_Token</a><a class="dropdown-item" href="#">@Test_Catalog</a><a class="dropdown-item" href="#">@All</a>
+<a class="dropdown-item" href="#">@All</a><a class="dropdown-item" href="#">@Test_Invalid_Token</a><a class="dropdown-item" href="#">@Test_Catalog</a><a class="dropdown-item" href="#">@Test_Without_Token</a>
 </ul>
 </li>
 </ul>
@@ -263,7 +263,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">Test API Zinio</p>
             <p class="text-sm">
-              <span>18:53:15</span> / <span>00:00:03:222</span>
+              <span>21:44:13</span> / <span>00:00:02:518</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -272,9 +272,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Test API Zinio</h5>
-<span class='badge badge-success'>07.10.2022 18:53:15</span>
-<span class='badge badge-danger'>07.10.2022 18:53:18</span>
-<span class='badge badge-default'>00:00:03:222</span>
+<span class='badge badge-success'>07.10.2022 21:44:13</span>
+<span class='badge badge-danger'>07.10.2022 21:44:15</span>
+<span class='badge badge-default'>00:00:02:518</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -384,15 +384,15 @@ eventsCount: 5,
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>1</span>
+<span class='badge log pass-bg'>3</span>
 </span>
-<p class="name">@Test_Without_Token</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">@All</p>
+<p class="duration text-sm">3 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@Test_Without_Token</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
+<h4>@All</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -405,7 +405,27 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>18:53:17 p. m.</td>
+<td>21:44:13 p. m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Get Catalog Zinio API</a>
+<div class="">
+<span class="badge badge-default">Test API Zinio.Get Catalog Zinio API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:15 p. m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='6'>Get Catalog Zinio API with a invalid Token</a>
+<div class="">
+<span class="badge badge-default">Test API Zinio.Get Catalog Zinio API with a invalid Token</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:15 p. m.</td>
 <td>
 <a href="#" class="linked" test-id='1' id='10'>Get Catalog Zinio API without Token</a>
 <div class="">
@@ -441,7 +461,7 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>18:53:17 p. m.</td>
+<td>21:44:15 p. m.</td>
 <td>
 <a href="#" class="linked" test-id='1' id='6'>Get Catalog Zinio API with a invalid Token</a>
 <div class="">
@@ -477,7 +497,7 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>18:53:15 p. m.</td>
+<td>21:44:13 p. m.</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>Get Catalog Zinio API</a>
 <div class="">
@@ -492,15 +512,15 @@ eventsCount: 5,
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>3</span>
+<span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@All</p>
-<p class="duration text-sm">3 tests</p>
+<p class="name">@Test_Without_Token</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@All</h4>
-<span status="pass" class='badge log pass-bg'>3 passed</span>
+<h4>@Test_Without_Token</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -513,27 +533,7 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>18:53:15 p. m.</td>
-<td>
-<a href="#" class="linked" test-id='1' id='2'>Get Catalog Zinio API</a>
-<div class="">
-<span class="badge badge-default">Test API Zinio.Get Catalog Zinio API</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>18:53:17 p. m.</td>
-<td>
-<a href="#" class="linked" test-id='1' id='6'>Get Catalog Zinio API with a invalid Token</a>
-<div class="">
-<span class="badge badge-default">Test API Zinio.Get Catalog Zinio API with a invalid Token</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>18:53:17 p. m.</td>
+<td>21:44:15 p. m.</td>
 <td>
 <a href="#" class="linked" test-id='1' id='10'>Get Catalog Zinio API without Token</a>
 <div class="">
