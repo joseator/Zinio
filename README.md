@@ -19,7 +19,7 @@ Or download a ZIP of master [manually](https://github.com/joseator/Zinio/archive
 
 Open a command window and run:
 
-    mvn test
+    mvn clean test
 
 This runs Cucumber features using Cucumber's JUnit runner. The `@RunWith(Cucumber.class)` annotation on the `TestRunner`
 class tells JUnit to kick off Cucumber.

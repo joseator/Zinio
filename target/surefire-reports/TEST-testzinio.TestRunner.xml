@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="testzinio.TestRunner" time="2.936" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="testzinio.TestRunner" time="2.646" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="cucumber.options" value="classpath:features/catalog.feature"/>
     <property name="java.vm.version" value="15.0.2+7-27"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-15.0.2\bin"/>
     <property name="maven.multiModuleProjectDirectory" value="D:\Joset\Documentos\GitHub\Zinio"/>
@@ -44,7 +43,7 @@
     <property name="java.class.path" value="C:\apache-maven-3.6.3\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="15"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dcucumber.options=classpath:features/catalog.feature"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-15.0.2"/>
     <property name="user.language" value="es"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -61,7 +60,7 @@
     <property name="sun.stdout.encoding" value="cp850"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Test API Zinio #2" name="Get Catalog Zinio API" time="2.442"/>
-  <testcase classname="Test API Zinio #2" name="Get Catalog Zinio API with a invalid Token" time="0.293"/>
-  <testcase classname="Test API Zinio #2" name="Get Catalog Zinio API without Token" time="0.201"/>
+  <testcase classname="Test API Zinio" name="Get Catalog Zinio API" time="2.218"/>
+  <testcase classname="Test API Zinio" name="Get Catalog Zinio API with a invalid Token" time="0.197"/>
+  <testcase classname="Test API Zinio" name="Get Catalog Zinio API without Token" time="0.231"/>
 </testsuite>
