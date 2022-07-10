@@ -41,8 +41,7 @@ public class StepDefinitions {
     private HttpResponse<JsonNode> catalogResponse;
 
     /**
-     * Function: takeAuthToken
-     * Description: This function send a POST request to the API Token endpoint with the client_id stored in
+     * This function send a POST request to the API Token endpoint with the client_id stored in
      * project.properties. If the response is a 200 OK, store the access token send in the properties to the following
      * requests.
      *
@@ -69,8 +68,7 @@ public class StepDefinitions {
     }
 
     /**
-     * Function: setInvalidToken
-     * Description: Store an invalid access token in the project properties.
+     * Store an invalid access token in the project properties.
      *
      * @throws IOException
      */
@@ -82,8 +80,7 @@ public class StepDefinitions {
     }
 
     /**
-     * Function: setEmptyToken
-     * Description: Store an empty access token in the project properties.
+     * Store an empty access token in the project properties.
      *
      * @throws IOException
      */
@@ -94,8 +91,7 @@ public class StepDefinitions {
     }
 
     /**
-     * Function: getCatalog
-     * Description: Send a GET request to the Zinio API Catalog Endpoint to get all the elements available with
+     * Send a GET request to the Zinio API Catalog Endpoint to get all the elements available with
      * its information. Then store the response in catalogResponse global variable.
      *
      * @throws UnirestException
@@ -115,8 +111,7 @@ public class StepDefinitions {
     }
 
     /**
-     * Function: checkCatalogRequest
-     * Description: Check if the response return by API Catalog endpoint is a 200 OK, and all the data in the
+     * Check if the response return by API Catalog endpoint is a 200 OK, and all the data in the
      * json object have the right format.
      *
      * Note: Also check the first element in the response, but I comment that because these objects are changing all days.
@@ -160,8 +155,7 @@ public class StepDefinitions {
     }
 
     /**
-     * Function: checkInvalidToken
-     * Description: Check if the response is a 401 Unauthorized by invalid token or expired.
+     * Check if the response is a 401 Unauthorized by invalid token or expired.
      */
     @Then("check the catalog request return a 401 Unauthorized: The access token is invalid or has expired")
     public void checkInvalidToken() {
@@ -171,8 +165,7 @@ public class StepDefinitions {
     }
 
     /**
-     * Function: checkMissingToken
-     * Description: Check if the response is a 401 Unauthorized by missed token.
+     * Check if the response is a 401 Unauthorized by missed token.
      */
     @Then("check the catalog request return a 401 Unauthorized: The access token is missing")
     public void checkMissingToken() {

@@ -27,8 +27,7 @@ public class SecureEncrypt {
     private static byte[] key;
 
     /**
-     * Function: setKey
-     * Description: Store the key passed as parameter in the secretKey variable.
+     * Store the key passed as parameter in the secretKey variable.
      * @param myKey key used to encrypt or decrypt data.
      */
     public static void setKey(String myKey)
@@ -47,8 +46,7 @@ public class SecureEncrypt {
     }
 
     /**
-     * Function: encrypt
-     * Description: Encrypt a string using a secret key.
+     * Encrypt a string using a secret key.
      * @param strToEncrypt String to encrypt.
      * @param secret Key used to encrypt the string
      * @return The string encrypted
@@ -70,8 +68,7 @@ public class SecureEncrypt {
     }
 
     /**
-     * Function: decrypt
-     * Description: Decrypt a string using a secret key.
+     * Decrypt a string using a secret key.
      * @param strToDecrypt String to decrypt
      * @param secret Key used to decrypt the string
      * @return the string decrypted.
